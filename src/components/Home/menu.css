@@ -1,0 +1,106 @@
+.navbar {
+    background: #dbdbdb;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    #icon {
+        padding: 0;
+    }
+    .icon_main .icon_div .icon_item {
+        padding: 10px 0;
+    }
+    .icon_main .icon_div .icon_item p {
+        font-size: 20px;
+        margin-top: -7px;
+    }
+}
+.navbar .img {
+    width: 120px;
+}
+.navbar .container{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+picture{
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        box-sizing: border-box;
+        font-family: DM Sans,sans-serif;
+    
+}
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+}
+.navbar ul li {
+    padding: 0 20px;
+}
+.navbar ul li a {
+    color: #777;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.icon_main{
+    
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        box-sizing: border-box;
+        font-family: DM Sans,sans-serif;
+
+}
+.icon_main .icon_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-slide{
+
+}
+.thumbs {text-align: center;
+}
+#count {
+    padding: 60px 0;
+}
+
+.count_main{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: DM Sans,sans-serif;
+}
+.count_main .count_item {
+    padding: 30px;
+    border-bottom: 1px solid #777;
+    border-right: 1px solid #777;
+    border-left: 1px solid #777;
+    border-top: 1px solid #777;
+}
