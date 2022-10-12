@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import Menu from '../Home/Menu';
-import '../Home/menu.css'
+import '../Home/style.css'
 import MobileMenu from '../Home/MobileMenu';
 
 const Profile = () => {
@@ -14,12 +14,12 @@ const Profile = () => {
                         <div className='flex justify-between items-center'>
                             <div>
                                 <div class="avatar p-2">
-                                    <div class="w-24">
+                                    <div class="lg:w-24 w-16">
                                         <img src="https://placeimg.com/192/192/people" className=' rounded-full' />
                                     </div>
                                 </div>
                             </div>
-                            <div><h2 className='text-xl text-opacity-70 font-serif text-lime-400 ml-3'> robiussanirazu@gmail.com</h2></div>
+                            <div><h2 className='lg:text-xl text-opacity-70 font-serif text-lime-400  lg:ml-3'> robiussanirazu@gmail.com</h2></div>
                         </div>
                     </div>
                     <div>
