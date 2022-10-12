@@ -33,7 +33,7 @@ const Menu = () => {
                                 <Link className="nav-link active" aria-current="page" href="/records">Records</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="/profile">Profile</Link>
+                                <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>
                             </li>
                         </ul>
                     </div>

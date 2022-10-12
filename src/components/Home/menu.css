@@ -1,7 +1,12 @@
 .navbar {
     background: #dbdbdb;
 }
-
+.profilebg{
+    background: #002b5b;
+}
+.profile{
+    background: #256D85;
+}
 @media screen and (min-width: 992px) {
     .navbar-expand-lg {
         flex-wrap: nowrap;
@@ -81,9 +86,6 @@ picture{
     justify-content: space-between;
 }
 
-.main-slide{
-
-}
 .thumbs {text-align: center;
 }
 #count {
