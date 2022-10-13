@@ -23,14 +23,14 @@ const Menu = () => {
                     <div className={navopen ? "collapse navbar-collapse show" : "collapse navbar-collapse"} style={{ paddingTop: "30px" }} id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="/dashboard">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="/ad">Ad</Link>
+                                <Link className="nav-link active" aria-current="page" to="/ad">Ad</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="/records">Records</Link>
+                                <Link className="nav-link active" aria-current="page" to="/records">Records</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>

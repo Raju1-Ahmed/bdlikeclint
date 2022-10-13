@@ -1,10 +1,25 @@
 import React from 'react';
-import { Button, Stack } from 'react-bootstrap';
 import Menu from '../Home/Menu';
 import '../Home/style.css'
 import MobileMenu from '../Home/MobileMenu';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const Profile = () => {
+    const location = useLocation();
+    const [user] = useAuthState(auth);
+    console.log(user);
+    if(!user){
+        return <Navigate to="/" state={{ from: location }} replace></Navigate>
+    }
+    const logout = () => {
+        console.log(user);
+        signOut(auth);
+    };
+
+
     return (
         <div>
             <Menu />
@@ -15,11 +30,15 @@ const Profile = () => {
                             <div>
                                 <div class="avatar p-2">
                                     <div class="lg:w-24 w-16">
+                                        
+                                        {user ? <img src={user.photoURL} className=' rounded-full' /> : 
                                         <img src="https://placeimg.com/192/192/people" className=' rounded-full' />
+                                        }
                                     </div>
                                 </div>
                             </div>
-                            <div><h2 className='lg:text-xl text-opacity-70 font-serif text-lime-400  lg:ml-3'> robiussanirazu@gmail.com</h2></div>
+                            <div><h2 className='lg:text-xl text-opacity-70 font-serif text-lime-400  lg:ml-3'> {user.email}</h2>
+                            <h2 className='lg:text-xl text-opacity-70 font-serif text-lime-400  lg:ml-3'> {user.displayName}</h2></div>
                         </div>
                     </div>
                     <div>
@@ -45,11 +64,11 @@ const Profile = () => {
 
             <div className='bg-emerald-900 	p-2 container flex justify-between items-center'>
                 <div>
-                    <table class=" w-96  ">
+                    <table class=" lg:w-96  ">
                         <thead>
                             <tr>
-                                <th class="text-xl text-opacity-70 font-serif text-lime-400	">Current Blance</th>
-                                <th class="text-xl text-opacity-70 font-serif text-lime-400	">Total Revenue</th>
+                                <th class="lg:text-xl text-opacity-70 font-serif text-lime-400	">Current Blance</th>
+                                <th class="lg:text-xl text-opacity-70 font-serif text-lime-400	">Total Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,22 +80,18 @@ const Profile = () => {
                     </table>
                 </div>
                 <div>
-                    <Stack direction="horizontal" gap={2}>
-                        <Button as="a" variant="success">INVITE FRIENDS </Button>
-                    </Stack>
+                <button type="button" class="btn mr-2 btn-success">INVITE FRIENDS</button>
                 </div>
                 <div>
-                    <Stack direction="horizontal" gap={2}>
-                        <Button as="a" variant="success">  My Team </Button>
-                    </Stack>
+                <button type="button" class="btn btn-success">MY Team</button>
                 </div>
             </div>
 
-            <div className='mt-3 mb-3  grid grid-cols-3 gap-4 justify-items-center'>
+            <div className='mt-3 mb-3  grid lg:grid-cols-3 grid-cols-2 gap-4 justify-items-center'>
                 <div className='hover:bg-emerald-900  hover:p-3 hover:rounded'>
                     <span className='flex justify-center items-center '><img src="https://img.icons8.com/external-anggara-glyph-anggara-putra/80/000000/external-information-support-anggara-glyph-anggara-putra.png" /> </span>
-                    <span className='flex justify-center items-center '>
-                        <h1 className='text-xl text-opacity-70 font-serif text-green-500 '>Personal Information</h1>
+                    <span className='flex justify-center items-center'>
+                        <h1 className='text-xl text-opacity-70 font-serif text-green-500 lg:ml-0 ml-[50px]'>Personal Information</h1>
                     </span>
                 </div>
                 <div className='hover:bg-emerald-900  hover:p-3 hover:rounded'>
@@ -133,8 +148,9 @@ const Profile = () => {
                     <span className='flex justify-center items-center '>
                     <img src="https://img.icons8.com/ios-glyphs/100/000000/exit.png"/>
                     </span>
-                    <span className='flex justify-center items-center '>
-                        <h1 className='text-xl text-opacity-70 font-serif text-green-500 '>LogOut </h1>
+                    <span className='flex justify-center items-center ' >
+                        
+                        <h1 className='text-xl text-opacity-70 font-serif text-green-500 '><button onClick={logout}>LogOut</button></h1>
                     </span>
                 </div>
             </div>

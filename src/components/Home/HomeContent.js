@@ -28,7 +28,7 @@ const HomeContent = () => {
 
                 </Carousel>
 
-            <div className='container grid grid-cols-4 justify-items-center	gap-4 mt-2 mb-2 '>
+            <div className='container grid lg:grid-cols-4 grid-cols-2 justify-items-center	gap-4 mt-2 mb-2 '>
             <div className='hover:bg-emerald-900  hover:p-3 hover:rounded'>
                     <span className='flex justify-center items-center '>
                     <img src="https://img.icons8.com/ios-filled/100/000000/money-bag-franc.png"/>                        
